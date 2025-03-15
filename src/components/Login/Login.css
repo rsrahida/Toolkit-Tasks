@@ -1,0 +1,145 @@
+/* Container for the login form */
+.login-page {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+
+/* Logo Styling */
+.login-logo {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #2d9cdb;
+  margin-bottom: 20px;
+}
+
+/* Login title */
+.login-header {
+  font-size: 1.6em;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input fields styling */
+.login-input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+label {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2d9cdb;
+  box-shadow: 0 0 5px rgba(45, 156, 219, 0.4);
+}
+
+input::placeholder {
+  color: #aaa;
+  font-size: 1em;
+}
+
+/* Login button styling */
+.login-btn {
+  padding: 14px;
+  background-color: #2d9cdb;
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:disabled {
+  background-color: #b0c8e1;
+  cursor: not-allowed;
+}
+
+.login-btn:hover:not(:disabled) {
+  background-color: #1a7bb8;
+}
+
+/* Error message styling */
+.login-error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+/* Register link */
+.login-register-link {
+  margin-top: 20px;
+  font-size: 1em;
+  color: #555;
+}
+
+.login-register-link a {
+  color: #2d9cdb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Success message for login */
+.login-success {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: green;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-page {
+    padding: 20px;
+  }
+
+  .login-logo {
+    font-size: 2em;
+  }
+
+  .login-header {
+    font-size: 1.4em;
+  }
+
+  .login-btn {
+    font-size: 1em;
+  }
+
+  .login-input-group input {
+    font-size: 0.95em;
+  }
+}

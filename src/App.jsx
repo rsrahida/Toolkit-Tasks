@@ -5,11 +5,9 @@ import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import ShoppingPage from "./pages/ShoppingPage";
 import Navbar from "./components/Navbar/Navbar";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "./features/themeSlice";
+import { useSelector } from "react-redux";
 
 const App = () => {
-  const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme.theme);
 
   useEffect(() => {
