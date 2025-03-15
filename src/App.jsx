@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import ShoppingPage from "./pages/ShoppingPage";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "./features/themeSlice";
 
 const App = () => {
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.theme.theme);
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
   return (
     <div>
       <BrowserRouter>

@@ -2,11 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 104.75%;
+  height: 35px;
   padding: 10px 40px;
   background-color: rgb(107, 0, 0);
   color: white;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
+  margin-left: -8px;
+  margin-top: -8px;
 }
 .navbar a {
   text-decoration: none;
@@ -15,7 +19,7 @@
   font-size: 18px;
   font-weight: 500;
   padding: 8px 10px;
-  height: 35px;
+  height: 23px;
   border-radius: 5px;
   position: relative;
   transition: color 0.3s, transform 0.3s ease;
@@ -54,4 +58,16 @@
 .navbar-links {
   display: flex;
   justify-content: flex-start;
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #b20000;
+  color: white;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+button:hover {
+  background-color: #fc5959;
+  color: black;
 }
