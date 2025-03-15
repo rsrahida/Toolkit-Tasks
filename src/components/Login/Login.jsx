@@ -11,17 +11,15 @@ const Login = () => {
   const dispatch = useDispatch();
   const { loading, error, user, token } = useSelector((state) => state.auth);
 
- 
   const validateForm = () => {
     let errors = {};
 
-    
     if (!email) {
       errors.email = "E-poçt ünvanı tələb olunur.";
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       errors.email = "Düzgün e-poçt ünvanı daxil edin.";
     }
-
+    
     if (!password) {
       errors.password = "Şifrə tələb olunur.";
     } else if (password.length < 6) {
@@ -42,20 +40,24 @@ const Login = () => {
   };
 
   if (user && token) {
-    return <p className="login-success">Xoş gəlmisiniz, {user.name}!</p>; 
+    return (
+      <div className="welcome">
+        <p className="login-success">Xoş gəlmisiniz, {user.name}!</p>
+      </div>
+    );
   }
 
   return (
     <div className="login-page">
-      <div className="login-logo">Korpem.az</div>
-      <h2 className="login-header">Giriş Yap</h2>
+      <div className="login-logo">🧸 e-Körpəm</div>
+      <h2 className="login-header">Giriş et</h2>
       <form onSubmit={handleSubmit} className="login-form">
         <div className="login-input-group">
           <label htmlFor="email">E-poçt</label>
           <input
             id="email"
             type="email"
-            placeholder="E-poçtunuzu daxil edin"
+            placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -68,7 +70,7 @@ const Login = () => {
           <input
             id="password"
             type="password"
-            placeholder="Şifrənizi daxil edin"
+            placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

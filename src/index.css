@@ -3,6 +3,7 @@ body {
   transition: all 0.2s ease;
   width: 90%;
   height: auto;
+  overflow-x: hidden;
 }
 body.light {
   background-color: #fff;

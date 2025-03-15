@@ -1,9 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-
 const REGISTER_URL = "https://ekorpem-api.webluna.org/api/v1/register";
 const LOGIN_URL = "https://ekorpem-api.webluna.org/api/v1/login";
-
 
 export const registerUser = createAsyncThunk(
   "auth/register",
@@ -20,7 +18,9 @@ export const registerUser = createAsyncThunk(
       const data = await response.json();
 
       if (!response.ok) {
-        return rejectWithValue(data.message || "E-poçt artıq mövcuddur.");
+        return rejectWithValue(
+          data.message || "Daxil etdiyiniz E-poçt artıq mövcuddur."
+        );
       }
 
       return data;
@@ -29,7 +29,6 @@ export const registerUser = createAsyncThunk(
     }
   }
 );
-
 
 export const loginUser = createAsyncThunk(
   "auth/login",
@@ -46,7 +45,9 @@ export const loginUser = createAsyncThunk(
       const data = await response.json();
 
       if (!response.ok) {
-        return rejectWithValue(data.message || "Email yaxud Sifre yanlisdir.");
+        return rejectWithValue(
+          data.message || "E-poçt yaxud Şifrə yanlışdlır."
+        );
       }
 
       return data;
@@ -55,7 +56,6 @@ export const loginUser = createAsyncThunk(
     }
   }
 );
-
 
 const authSlice = createSlice({
   name: "auth",
