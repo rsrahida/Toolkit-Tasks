@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../../features/authSlice";
-import { useNavigate } from "react-router-dom";
 import "./Register.css";
 
 const Register = () => {
@@ -13,10 +12,8 @@ const Register = () => {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [formErrors, setFormErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState(false);
-  const [isRegistered, setIsRegistered] = useState(false);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const { loading, error, user } = useSelector((state) => state.auth);
 
@@ -48,19 +45,13 @@ const Register = () => {
       setEmail("");
       setPassword("");
       setTermsAccepted(false);
-      setIsRegistered(true);
-    }
-  };
-
-  useEffect(() => {
-    if (user) {
       setSuccessMessage(true);
+
       setTimeout(() => {
         setSuccessMessage(false);
-        navigate("/login");
-      }, 1500);
+      }, 1000);
     }
-  }, [user, navigate]);
+  };
 
   return (
     <div className="register">
@@ -71,18 +62,20 @@ const Register = () => {
           Korpem.az ailesinə qoşulun və unikal endirimlər, yeni kolleksiyalar və
           fərdi təkliflərdən faydalanın.
         </p>
+
         {successMessage && (
           <div className="popup-message">
             <p className="popup">Siz uğurla qeydiyyatdan keçdiniz!</p>
           </div>
         )}
+
         <form onSubmit={handleSubmit} className="register-form">
           <div className="input-group">
             <label htmlFor="name">Ad</label>
             <input
               type="text"
               id="name"
-              placeholder="Enter your name"
+              placeholder="Adınızı daxil edin"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -90,12 +83,13 @@ const Register = () => {
               <p className="error-message">{formErrors.name}</p>
             )}
           </div>
+
           <div className="input-group">
             <label htmlFor="surname">Soyad</label>
             <input
               type="text"
               id="surname"
-              placeholder="Enter your surname"
+              placeholder="Soyadınızı daxil edin"
               value={surname}
               onChange={(e) => setSurname(e.target.value)}
             />
@@ -109,7 +103,7 @@ const Register = () => {
             <input
               type="text"
               id="phone"
-              placeholder="Enter your phone number"
+              placeholder="Mobil nömrənizi daxil edin"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
@@ -123,7 +117,7 @@ const Register = () => {
             <input
               type="email"
               id="email"
-              placeholder="Enter your email"
+              placeholder="E-poçtunuzu daxil edin"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -131,12 +125,13 @@ const Register = () => {
               <p className="error-message">{formErrors.email}</p>
             )}
           </div>
+
           <div className="input-group">
             <label htmlFor="password">Şifrə</label>
             <input
               type="password"
               id="password"
-              placeholder="Enter your password"
+              placeholder="Şifrənizi daxil edin"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -144,6 +139,7 @@ const Register = () => {
               <p className="error-message">{formErrors.password}</p>
             )}
           </div>
+
           <div className="terms-container">
             <input
               type="checkbox"
@@ -162,7 +158,7 @@ const Register = () => {
             disabled={loading || !termsAccepted}
             className="register-btn"
           >
-            {loading ? "Loading..." : "Qeydiyyatdan Keç"}
+            {loading ? "Yüklənir..." : "Qeydiyyatdan Keç"}
           </button>
           {error && <p className="error-message">{error}</p>}
           <p className="login-link">

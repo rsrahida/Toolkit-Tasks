@@ -30,6 +30,12 @@ const Navbar = () => {
         >
           Məhsullar
         </Link>
+        <Link
+          to="/notification"
+          className={location.pathname === "/notification" ? "active" : ""}
+        >
+          Xəbərdarlıq
+        </Link>
       </div>
       <div className="theme-switcher">
         <ThemeSwitcher />
