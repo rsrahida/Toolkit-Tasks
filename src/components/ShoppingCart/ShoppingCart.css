@@ -1,0 +1,106 @@
+.shopping-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+.shopping-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fa0000;
+}
+.shopping-container .products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.shopping-container .product-card {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(206, 0, 0, 0.349);
+  text-align: center;
+  background-color: #fff;
+}
+.shopping-container .product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.shopping-container .product-card h3 {
+  font-size: 0.8rem;
+  margin: 10px 0;
+  color: #000000;
+}
+.shopping-container .product-card p {
+  font-size: 1rem;
+  color: #333333;
+}
+.shopping-container .product-card button {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: #ff3700;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.shopping-container .product-card button:hover {
+  background-color: #b300aa;
+}
+.shopping-container .cart {
+  margin-top: 40px;
+}
+.shopping-container .cart h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #fa0000;
+}
+.shopping-container .cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.shopping-container .cart-item h4 {
+  font-size: 1.2rem;
+  color: #6a6a6a;
+  width: 600px;
+  display: flex;
+}
+.shopping-container .cart-item p {
+  font-size: 1rem;
+  color: #2f2f2f;
+}
+.shopping-container .cart-item button {
+  background-color: #720000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.shopping-container .cart-item button:hover {
+  background-color: #d73737;
+}
+.shopping-container .cart-item input {
+  width: 40px;
+  text-align: center;
+  padding-left: 23px;
+  margin: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.shopping-container .cart-item button:hover,
+.shopping-container .cart-item input:focus {
+  outline: none;
+}
+.shopping-container .cart-item button:disabled {
+  background-color: #ccc;
+}
+.shopping-container .cart h3 {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: #950000;
+}
